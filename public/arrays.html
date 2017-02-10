@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Arrays!</title>
+  </head>
+  <body>
+    <h1>Arrays!</h1>
+    <script>
+    var numbers = [2, 3, 5, 7, 42, 113]; //array literal, standard method
+
+    var letters = new Array('a', 'b', 'c', 'd');
+
+    //uh oh!
+    // var someMoreNumbers = new Array(3); //undefined x 3
+    // var someMoreNumbers = new Array(3, 1); //builds an array with values 3, 1
+    // var someMoreLetters = new Array('a'); //prints a
+    // //DO NOT USE THE NEW ARRAY SYNTAX ^
+
+    console.log(numbers);
+    console.log(letters);
+
+    console.log(numbers.reverse());
+
+    console.log(numbers); //shows as reversed, the above method has permanently reversed the array
+    numbers.reverse(); //this will reverse the numbers back
+
+    //Functions
+    function double(num){
+      return 2 * num;
+    }
+
+    function triple(num){
+      return 3 * num;
+    }
+
+    function toString(num){
+      return String(num); //String is a built-in function and should be capitalized, like Array, Number
+    }
+
+    function isLessThan20(num){
+      return num < 20;
+    }
+
+    //Map - transform and give a new result, these do not permanently change the original numbers array
+    var numbersLessThan20 = numbers.map(isLessThan20);
+    console.log(numbers);
+    console.log(numbersLessThan20); //displays a transformed array with true/false values
+    var doubled = numbers.map(double);
+    console.log(numbers);
+    console.log(doubled); //displays a new array with the numbers doubled
+
+    //Filter - must use a boolean condition to make sense
+    var lessThan = numbers.filter(isLessThan20);
+    console.log(numbers);
+    console.log(lessThan);
+
+    var filterDouble = numbers.filter(double); //doesn't logically make sense so the array results the same numbers - not a boolean condition
+    console.log(numbers);
+    console.log(filterDouble); //however, numbers === filterDouble is false. They are photocopies of each other.
+
+    var stringNums = numbers.map(toString);
+    console.log(stringNums);
+
+    //ForEach
+
+    //Reduce
+
+
+    </script>
+  </body>
+</html>
