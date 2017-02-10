@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Booleans</title>
+  </head>
+  <body>
+    <h1>Introduction to Booleans</h1>
+    <script>
+      console.log('It is working!')
+      var yes = true;
+      var no = false;
+      // BAD!
+      // console.log(yes + no); //logs 1, 1 is true, 0 is false
+
+      //Boolean operators, output is either true or false
+      //Not operator --> !
+      console.log(!yes); //outputs false
+
+      //And operator --> &&     both conditions have to be met - unless both are true, it's false
+      console.log(yes && yes); //outputs true
+      console.log(yes && no); // outputs false
+      console.log(no && yes); // outputs false
+      console.log(no && no); //outputs false
+
+      //Or operator --> ||    If any are true, it's true
+      console.log(yes || yes); //outputs true
+      console.log(yes || no); // outputs true
+      console.log(no || yes); // outputs true
+      console.log(no || no); //outputs false
+
+      //Comparative operators : compare values of data   order matters
+      //less than
+      console.log(3 < 5); //outputs true
+      console.log(5 < 3); //outputs false
+      //greater than
+      console.log(3 < 5); //outputs false
+      console.log(5 < 3); //outputs true
+      //less than or equal to
+      console.log(3 <= 3); //outputs true
+      console.log(3 <= 2); //outputs false
+      //greater than or equal to
+      console.log(3 >= 3); //outputs true
+      console.log(3 >= 2); //outputs true
+      console.log(2 >= 3); //outputs false
+
+      //letters of the alphabet are ordered like numbers
+      console.log('a' > 'b'); //outputs false
+      console.log('c' > 'b'); //outputs true
+      console.log('a' < 'b'); //outputs true
+      console.log('a' <= 'b'); //outputs true
+
+      var one = 1;
+      var two = 2;
+      var thirthy = 30;
+
+      console.log('one' < 'two'); //outputs true
+
+      //Equal to
+      console.log(2 == 2); //outputs true
+      console.log(2 === 2); //outputs true
+      console.log('2' == 2); //coersive loose quality - truthy, tries to use logic to make them equal, viewed '2' a 2
+      console.log('3' == 2); //false
+      console.log('2' === 2); //false - makes sure types are the same
+
+      //Not equal to
+      console.log('2' != 3); //outputs true
+      console.log('2' !== 3); //outputs true
+      console.log('2' != 2); //outputs false
+      console.log('2' !== 2); //outputs true  - types do not match
+
+      console.log('' == false); //true, empty string is equal to false
+      console.log('' === false); //false
+      console.log(' ' == false); //true
+      console.log(' ' === false); //false
+      console.log('asdfasdfasdf' == false); //outputs false
+      console.log('asdfasdfasdf' === false); //outputs false
+
+      var user = '';
+      if(user){
+        console.log('found');
+      } //prints nothing
+
+      var user = ' ';
+      if(user){
+        console.log('found');
+      } //prints found
+
+
+
+
+    </script>
+  </body>
+</html>
