@@ -17,54 +17,86 @@
     // var someMoreLetters = new Array('a'); //prints a
     // //DO NOT USE THE NEW ARRAY SYNTAX ^
 
-    console.log(numbers);
-    console.log(letters);
-
-    console.log(numbers.reverse());
-
-    console.log(numbers); //shows as reversed, the above method has permanently reversed the array
-    numbers.reverse(); //this will reverse the numbers back
-
-    //Functions
-    function double(num){
-      return 2 * num;
-    }
-
-    function triple(num){
-      return 3 * num;
-    }
-
-    function toString(num){
-      return String(num); //String is a built-in function and should be capitalized, like Array, Number
-    }
-
-    function isLessThan20(num){
-      return num < 20;
-    }
-
-    //Map - transform and give a new result, these do not permanently change the original numbers array
-    var numbersLessThan20 = numbers.map(isLessThan20);
-    console.log(numbers);
-    console.log(numbersLessThan20); //displays a transformed array with true/false values
-    var doubled = numbers.map(double);
-    console.log(numbers);
-    console.log(doubled); //displays a new array with the numbers doubled
-
-    //Filter - must use a boolean condition to make sense
-    var lessThan = numbers.filter(isLessThan20);
-    console.log(numbers);
-    console.log(lessThan);
-
-    var filterDouble = numbers.filter(double); //doesn't logically make sense so the array results the same numbers - not a boolean condition
-    console.log(numbers);
-    console.log(filterDouble); //however, numbers === filterDouble is false. They are photocopies of each other.
-
-    var stringNums = numbers.map(toString);
-    console.log(stringNums);
+    // console.log(numbers);
+    // console.log(letters);
+    //
+    // console.log(numbers.reverse());
+    //
+    // console.log(numbers); //shows as reversed, the above method has permanently reversed the array
+    // numbers.reverse(); //this will reverse the numbers back
+    //
+    // //Functions
+    // function double(num){
+    //   return 2 * num;
+    // }
+    //
+    // function triple(num){
+    //   return 3 * num;
+    // }
+    //
+    // function toString(num){
+    //   return String(num); //String is a built-in function and should be capitalized, like Array, Number
+    // }
+    //
+    // function isLessThan20(num){
+    //   return num < 20;
+    // }
+    //
+    // //Map - transform and give a new result, these do not permanently change the original numbers array
+    // var numbersLessThan20 = numbers.map(isLessThan20);
+    // console.log(numbers);
+    // console.log(numbersLessThan20); //displays a transformed array with true/false values
+    // var doubled = numbers.map(double);
+    // console.log(numbers);
+    // console.log(doubled); //displays a new array with the numbers doubled
+    //
+    // //Filter - must use a boolean condition to make sense
+    // var lessThan = numbers.filter(isLessThan20);
+    // console.log(numbers);
+    // console.log(lessThan);
+    //
+    // var filterDouble = numbers.filter(double); //doesn't logically make sense so the array results the same numbers - not a boolean condition
+    // console.log(numbers);
+    // console.log(filterDouble); //however, numbers === filterDouble is false. They are photocopies of each other.
+    //
+    // var stringNums = numbers.map(toString);
+    // console.log(stringNums);
 
     //ForEach
+    var candies = ['Reeses', 'Nerds', 'M&Ms', 'Cheetos'];
+    var results = candies.forEach(function(candy){
+      console.log(`Eating: ${candy}`)
+    });  //forEach takes a function   callback is (item(current value), index, array)
+    console.log(results);
+    function map(arr, transformation){
+      var satchel = []; //array placeholder for the transformed values
+      //for each element of arr run the function in the parenthesis, arr is the first parameter
+      arr.forEach(function(element){
+        //apply the transformation function to each element
+        //store that in the variable transformedValue
+        var transformedValue = transformation(element);
+        satchel.push(transformedValue); //sends whatever is the parenthesis to the satchel array
+      });
+      return satchel;
+    }
+    function length(str){
+      return str.length;
+    }
+    var candyLength = map(candies, length);
+    console.log(candyLength);
 
     //Reduce
+    var integers = [1, 2, 3, 4, 5];
+    function sum(first, second){
+      return first + second;
+    }
+    function concat(str1, str2){
+      return str1 + str2;
+    }
+    var total = integers.reduce(sum, 0);
+    console.log(total);
+    var allCandies = candies.reduce(sum, '');
+    console.log(allCandies);
 
 
     </script>
